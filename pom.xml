@@ -11,13 +11,13 @@
     </parent>
 
     <groupId>com.crosslake</groupId>
-    <artifactId>cicd-demo-app</artifactId>
+    <artifactId>cb-app</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>cicd-demo-app</name>
+    <name>cb-app</name>
     <description>Demo project for Spring Boot</description>
-    <url>https://github.com/upalepu/cicd-demo-app</url>
+    <url>https://github.com/upalepu/cb-app</url>
 
     <licenses>
         <license>
@@ -38,7 +38,7 @@
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/upalepu/cicd-demo-app/issues</url>
+        <url>https://github.com/upalepu/cb-app/issues</url>
     </issueManagement>
 
     <properties>
@@ -71,9 +71,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/upalepu/cicd-demo-app</url>
-        <connection>scm:git:git://github.com/upalepu/cicd-demo-app.git</connection>
-        <developerConnection>scm:git:git@github.com:upalepu/cicd-demo-app.git</developerConnection>
+        <url>https://github.com/upalepu/cb-app</url>
+        <connection>scm:git:git://github.com/upalepu/cb-app.git</connection>
+        <developerConnection>scm:git:git@github.com:upalepu/cb-app.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
