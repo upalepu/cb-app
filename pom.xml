@@ -17,7 +17,7 @@
 
     <name>cicd-demo-app</name>
     <description>Demo project for Spring Boot</description>
-    <url>https://github.com/bpmericle/cicd-demo-app</url>
+    <url>https://github.com/upalepu/cicd-demo-app</url>
 
     <licenses>
         <license>
@@ -29,16 +29,16 @@
 
     <developers>
         <developer>
-            <email>brianm@crosslake.com</email>
-            <name>Brian Mericle</name>
-            <url>https://github.com/bpmericle</url>
-            <id>bpmericle</id>
+            <email>umap@crosslaketech.com</email>
+            <name>Uma Palepu</name>
+            <url>https://github.com/upalepu</url>
+            <id>upalepu</id>
         </developer>
     </developers>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/bpmericle/cicd-demo-app/issues</url>
+        <url>https://github.com/upalepu/cicd-demo-app/issues</url>
     </issueManagement>
 
     <properties>
@@ -71,9 +71,9 @@
     </properties>
 
     <scm>
-        <url>https://github.com/bpmericle/cicd-demo-app</url>
-        <connection>scm:git:git://github.com/bpmericle/cicd-demo-app.git</connection>
-        <developerConnection>scm:git:git@github.com:bpmericle/cicd-demo-app.git</developerConnection>
+        <url>https://github.com/upalepu/cicd-demo-app</url>
+        <connection>scm:git:git://github.com/upalepu/cicd-demo-app.git</connection>
+        <developerConnection>scm:git:git@github.com:upalepu/cicd-demo-app.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
