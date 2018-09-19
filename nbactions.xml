@@ -56,7 +56,7 @@
             </goals>
             <properties>
                 <sonar.host.url>http://localhost:9000</sonar.host.url>
-                <sonar.login>5adaa496e8a5c753d1afcb30376e9e32bfa61da2</sonar.login>
+                <sonar.login>6926e55f862d33136118168ebfd082cde22801da</sonar.login>
                 
                 
                 
