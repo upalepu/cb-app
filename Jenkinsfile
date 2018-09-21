@@ -5,6 +5,7 @@ pipeline {
     agent {
         reuseNode 'true'
         label 'default-java' 
+        node { checkout scm }
     }
     options {
         timestamps()
