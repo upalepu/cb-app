@@ -2,10 +2,7 @@
 @Library(['cb-pipeline']) _
 
 pipeline {
-    node { checkout scm }
-    agent {
-        label 'default-java' 
-    }
+    agent any 
     options {
         timestamps()
     }
