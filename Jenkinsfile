@@ -90,7 +90,7 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    agent { label 'docker-in-docker' }
+                    agent { label 'cb-dind' }
                     steps {
                         executePublishImageToArtifactRepositoryStageSteps()
                     }
