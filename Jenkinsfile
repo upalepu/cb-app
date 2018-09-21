@@ -3,9 +3,9 @@
 
 pipeline {
     agent {
+        reuseNode 'true'
         node {
             label 'default-java' 
-            reuseNode 'true'
         } 
     }
     options {
