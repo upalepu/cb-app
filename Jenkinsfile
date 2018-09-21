@@ -90,15 +90,17 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    steps {
-                        executePublishImageToArtifactRepositoryStageSteps()
-                    }
-                    post {
-                        success {
-                            executePublishImageToArtifactRepositoryStagePostSuccessSteps()
+                    container('docker-java') {
+                        steps {
+                            executePublishImageToArtifactRepositoryStageSteps()
                         }
-                        failure {
-                            executePublishImageToArtifactRepositoryStagePostFailureSteps()
+                        post {
+                            success {
+                                executePublishImageToArtifactRepositoryStagePostSuccessSteps()
+                            }
+                            failure {
+                                executePublishImageToArtifactRepositoryStagePostFailureSteps()
+                            }
                         }
                     }
                 }
