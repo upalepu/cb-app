@@ -90,6 +90,7 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
+                    agent { label 'docker-in-docker' }
                     steps {
                         executePublishImageToArtifactRepositoryStageSteps()
                     }
