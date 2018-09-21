@@ -2,7 +2,7 @@
 @Library(['cb-pipeline']) _
 
 pipeline {
-    agent any
+    agent { label = 'default-java' } 
     options {
         timestamps()
     }
@@ -90,17 +90,16 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    container('docker-java') {
-                        steps {
-                            executePublishImageToArtifactRepositoryStageSteps()
+                    agent { label = 'docker-java' }
+                    steps {
+                        executePublishImageToArtifactRepositoryStageSteps()
+                    }
+                    post {
+                        success {
+                            executePublishImageToArtifactRepositoryStagePostSuccessSteps()
                         }
-                        post {
-                            success {
-                                executePublishImageToArtifactRepositoryStagePostSuccessSteps()
-                            }
-                            failure {
-                                executePublishImageToArtifactRepositoryStagePostFailureSteps()
-                            }
+                        failure {
+                            executePublishImageToArtifactRepositoryStagePostFailureSteps()
                         }
                     }
                 }
