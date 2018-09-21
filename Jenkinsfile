@@ -4,9 +4,7 @@
 pipeline {
     agent {
         reuseNode 'true'
-        node {
-            label 'default-java' 
-        } 
+        label 'default-java' 
     }
     options {
         timestamps()
