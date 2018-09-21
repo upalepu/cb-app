@@ -2,7 +2,7 @@
 @Library(['cb-pipeline']) _
 
 pipeline {
-    agent { label = 'default-java' } 
+    agent { label 'default-java' } 
     options {
         timestamps()
     }
@@ -90,7 +90,7 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    agent { label = 'docker-java' }
+                    agent { label 'docker-java' }
                     steps {
                         executePublishImageToArtifactRepositoryStageSteps()
                     }
