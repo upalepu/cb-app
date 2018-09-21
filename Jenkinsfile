@@ -90,6 +90,7 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
+                    agent { label 'docker-java' }
                     steps {
                         executePublishImageToArtifactRepositoryStageSteps()
                     }
