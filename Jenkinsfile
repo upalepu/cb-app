@@ -2,7 +2,12 @@
 @Library(['cb-pipeline']) _
 
 pipeline {
-    agent { label 'default-java' } 
+    agent {
+        node {
+            label 'default-java' 
+            reuseNode 'true'
+        } 
+    }
     options {
         timestamps()
     }
