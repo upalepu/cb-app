@@ -90,12 +90,12 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    agent {
+/*                    agent {
                         docker {
                             image 'umapalepu/cb-dind:1.0.0'
                             args '-v $HOME/.m2:/root/.m2'
-                            reuseNode true
-                        }
+//                            reuseNode true
+                        } */
                     }
                     steps {
                         executePublishImageToArtifactRepositoryStageSteps()
