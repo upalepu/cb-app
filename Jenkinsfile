@@ -90,15 +90,15 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    agent { 
-                        label 'default-java' 
+/*                    agent { 
+                        label 'default-java' */ 
                         containerTemplate { 
                             name 'cb-dind'
                             image 'umapalepu/cb-dind:1.0.0'
                             ttyEnabled true
                             command 'cat'
                         }
-                    }
+/*                    } */
                     container('cb-dind') {
                         steps {
                             executePublishImageToArtifactRepositoryStageSteps()
