@@ -90,16 +90,26 @@ pipeline {
                     }
                 }
                 stage('Publish Image') {
-                    agent { label 'cb-dind' }
-                    steps {
-                        executePublishImageToArtifactRepositoryStageSteps()
-                    }
-                    post {
-                        success {
-                            executePublishImageToArtifactRepositoryStagePostSuccessSteps()
+                    agent { 
+                        label 'default-java' 
+                        containerTemplate { 
+                            name 'cb-dind'
+                            image 'umapalepu/cb-dind:1.0.0'
+                            ttyEnabled true
+                            command 'cat'
                         }
-                        failure {
-                            executePublishImageToArtifactRepositoryStagePostFailureSteps()
+                    }
+                    container('cb-dind') {
+                        steps {
+                            executePublishImageToArtifactRepositoryStageSteps()
+                        }
+                        post {
+                            success {
+                                executePublishImageToArtifactRepositoryStagePostSuccessSteps()
+                            }
+                            failure {
+                                executePublishImageToArtifactRepositoryStagePostFailureSteps()
+                            }
                         }
                     }
                 }
