@@ -37,10 +37,42 @@ metadata:
   name: @@ARTIFACT_ID@@
   namespace: @@NAMESPACE@@
 spec:
-  type: LoadBalancer
+#  type: LoadBalancer
   ports:
   - name: http
     port: @@EXTERNAL_PORT@@
     targetPort: 8090
   selector:
     app: @@ARTIFACT_ID@@
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: @@ARTIFACT_ID@@-ing
+  namespace: @@NAMESPACE@@
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+# Added 9/29/2018. From looking at the nginx-ingress-controller docker registry example.
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+#    nginx.ingress.kubernetes.io/auth-tls-secret: nexus-tls
+# Commented out this on 9/29/2018 - see items above. 
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+#    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+#    nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
+spec:
+  # Added on 9/29/2018. 
+#  tls:
+#  - hosts:
+#    - docker.palepuweb.org
+#    secretName: nexus-tls
+  rules:
+  - host:
+      cbdemo.palepuweb.org
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: @@ARTIFACT_ID@@
+          servicePort: @@EXTERNAL_PORT@@
