@@ -13,6 +13,7 @@ spec:
       labels:
         app: @@ARTIFACT_ID@@
     spec:
+      serviceAccountName: demoapp
       containers:
       - name: @@ARTIFACT_ID@@
         image: @@IMAGE_TAG@@
