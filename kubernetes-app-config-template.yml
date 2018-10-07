@@ -62,7 +62,8 @@ metadata:
 spec:
   rules:
   - host:
-      @@NAMESPACE@@.palepuweb.org
+      palepuweb.org
+#      @@NAMESPACE@@.palepuweb.org
     http:
       paths:
       - path: /
