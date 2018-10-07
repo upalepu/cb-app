@@ -33,6 +33,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Brian Mericle
  */
 @SpringBootApplication
+@ComponentScan
 public class DemoApplication {
 
    /**
