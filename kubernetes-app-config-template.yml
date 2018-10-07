@@ -4,7 +4,7 @@ metadata:
   name: @@ARTIFACT_ID@@
   namespace: @@NAMESPACE@@
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: @@ARTIFACT_ID@@
@@ -13,7 +13,6 @@ spec:
       labels:
         app: @@ARTIFACT_ID@@
     spec:
-      serviceAccountName: demoapp
       containers:
       - name: @@ARTIFACT_ID@@
         image: @@IMAGE_TAG@@
@@ -35,10 +34,9 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: @@ARTIFACT_ID@@
+  name: @@ARTIFACT_ID@@-svc
   namespace: @@NAMESPACE@@
 spec:
-#  type: LoadBalancer
   ports:
   - name: http
     port: @@EXTERNAL_PORT@@
@@ -57,17 +55,11 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
-#    nginx.ingress.kubernetes.io/auth-tls-secret: nexus-tls
 # Commented out this on 9/29/2018 - see items above. 
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 #    nginx.ingress.kubernetes.io/proxy-body-size: 100m
 #    nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
 spec:
-  # Added on 9/29/2018. 
-#  tls:
-#  - hosts:
-#    - docker.palepuweb.org
-#    secretName: nexus-tls
   rules:
   - host:
       cbdemo.palepuweb.org
@@ -75,5 +67,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: @@ARTIFACT_ID@@
+          serviceName: @@ARTIFACT_ID@@-svc
           servicePort: @@EXTERNAL_PORT@@
