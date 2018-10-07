@@ -104,9 +104,13 @@ pipeline {
                 }
             }
         }
+        stage('Deployment Setup') {
+            steps {
+                executeSetupDeployments()
+            }
+        }
         stage('Deploy to Pre-Production') {
             steps {
-                cbk8s.setupkubecfg()
                 executeDeployToPreProductionStageSteps()
             }
             post {
