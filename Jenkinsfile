@@ -106,6 +106,7 @@ pipeline {
         }
         stage('Deploy to Pre-Production') {
             steps {
+                cbk8s.setupkubecfg()
                 executeDeployToPreProductionStageSteps()
             }
             post {
