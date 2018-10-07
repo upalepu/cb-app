@@ -57,17 +57,16 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
 # Commented out this on 9/29/2018 - see items above. 
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+#    nginx.ingress.kubernetes.io/rewrite-target: /
 #    nginx.ingress.kubernetes.io/proxy-body-size: 100m
 #    nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
 spec:
   rules:
   - host:
-      palepuweb.org
-#      @@NAMESPACE@@.palepuweb.org
+      @@NAMESPACE@@.palepuweb.org
     http:
       paths:
-      - path: /cbdemo
+      - path: /
         backend:
           serviceName: @@ARTIFACT_ID@@-svc
           servicePort: @@EXTERNAL_PORT@@
