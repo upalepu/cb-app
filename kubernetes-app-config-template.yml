@@ -62,7 +62,7 @@ metadata:
 spec:
   rules:
   - host:
-      cbdemo.palepuweb.org
+      @@NAMESPACE@@.palepuweb.org
     http:
       paths:
       - path: /
