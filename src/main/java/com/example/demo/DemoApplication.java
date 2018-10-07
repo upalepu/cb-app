@@ -25,7 +25,7 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import org.springframework.context.annotation.ComponentScan;
 /**
  * Spring Boot Application. This was taken from
  * <a href="https://spring.io/guides/gs/actuator-service/">here</a>.
