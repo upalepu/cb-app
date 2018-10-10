@@ -68,7 +68,7 @@ public class HelloWorldControllerTest {
       this.mockMvc.perform(
               get(URI))
               .andExpect(status().isOk())
-              .andExpect(content().string(containsString("Hello, Friend!")));
+              .andExpect(content().string(containsString("Hello, Stranger!")));
    }
 
    @Test

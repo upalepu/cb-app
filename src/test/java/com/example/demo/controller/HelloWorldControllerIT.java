@@ -66,7 +66,7 @@ public class HelloWorldControllerIT {
 
       String content = greeting.getContent();
       assertThat(content).isNotNull();
-      assertThat(content).isEqualTo("Hello, Friend!");
+      assertThat(content).isEqualTo("Hello, Stranger!");
    }
 
    @Test

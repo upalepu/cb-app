@@ -57,7 +57,7 @@ public final class HelloWorldController {
     */
    @GetMapping("/greet")
    @ResponseBody
-   public Greeting sayHello(@RequestParam(name = "name", required = false, defaultValue = "Friend") final String name) {
+   public Greeting sayHello(@RequestParam(name = "name", required = false, defaultValue = "Stranger") final String name) {
       return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
    }
 }
