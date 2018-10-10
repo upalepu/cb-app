@@ -41,7 +41,7 @@ public class DemoApplication {
     * 
     * @param args the arguments to be sent into the application.
     */
-   public static void main(final String[] args) {
+   public static void main(final String[] args) throws Exception {
       SpringApplication.run(DemoApplication.class, args);
    }
 }
