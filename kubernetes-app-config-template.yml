@@ -13,6 +13,8 @@ spec:
       labels:
         app: @@ARTIFACT_ID@@
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: @@ARTIFACT_ID@@
         image: @@IMAGE_TAG@@
