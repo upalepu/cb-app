@@ -73,6 +73,12 @@ pipeline {
                 }
             }
         }
+        /* USP: 6/15/2019: Moved container setup to before publish. To ensure the container is properly setup. */
+        stage('Deployment Setup') {
+            steps {
+                executeSetupDeployments()
+            }
+        }
         stage('Publish') {
             failFast true
             parallel {
@@ -104,11 +110,13 @@ pipeline {
                 }
             }
         }
+        /*
         stage('Deployment Setup') {
             steps {
                 executeSetupDeployments()
             }
         }
+        */
         stage('Deploy to Pre-Production') {
             steps {
                 executeDeployToPreProductionStageSteps()
